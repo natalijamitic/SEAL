@@ -37,7 +37,7 @@ public class Globals {
     public static final Paint FORWARD_PAINT = Paint.valueOf("#ff0000");
     public static final Color BACK_COLOR = Color.valueOf("#ffea00");
     public static final Color FORWARD_COLOR = Color.valueOf("#ff0000");
-    public static final Color ROTOR_STATE_DEFAULT_COLOR = Color.valueOf("#1e90ff");
+    public static final Color ROTOR_STATE_DEFAULT_COLOR = Color.valueOf("#c1c1c1");
     public static final Color ROTOR_STATE_DARK_COLOR = Color.valueOf("#585e71");
     public static final LinearGradient PLUGBOARD_GRADIENT = new LinearGradient(0.165, 1, 0.5, 0.70, true, CycleMethod.NO_CYCLE, new Stop(1,Color.BLACK), new Stop(0, Color.color(0.81, 0.81, 0.81)));
 

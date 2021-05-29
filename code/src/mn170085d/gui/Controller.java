@@ -301,6 +301,7 @@ public class Controller {
         fireKeyEventsKeyboardMode();
 
         createImportExport();
+        openTextboxPane();
         // loadingAnimation();
     }
 
