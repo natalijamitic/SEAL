@@ -8,9 +8,14 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import mn170085d.Globals;
 import mn170085d.enigma.Machine;
+
+import java.io.File;
 
 
 public class Controller {
@@ -30,7 +35,8 @@ public class Controller {
     TextArea inputText, outputText, inputTextSimulation, outputTextSimulation;
     @FXML
     Menu settingsMenu, modeMenu, resetToDefaultMenu;
-
+    @FXML
+    AnchorPane anchorPane;
 
     private Boolean isSettingsPaneInitialized = false;
 
@@ -63,19 +69,19 @@ public class Controller {
      ************************************************/
     public void openTextboxPane() {
         setDisplayingClass(modeMenu, settingsMenu);
-
+        leaveSimulationMode();
         textboxPane.toFront();
         bringRotorStatesToFront();
     }
     public void openKeyboardPane() {
         setDisplayingClass(modeMenu, settingsMenu);
-
+        leaveSimulationMode();
         keyboardPane.toFront();
         bringRotorStatesToFront();
     }
     public void openSimulationPane() {
         setDisplayingClass(modeMenu, settingsMenu);
-
+        inputTextSimulation.setDisable(false);
         if (simulation == null) {
             createNewSimulation();
         }
@@ -89,6 +95,7 @@ public class Controller {
         refreshWires();
     }
     public void openSettingsPane() {
+        leaveSimulationMode();
         if (!isSettingsPaneInitialized) {
             initializeSettingsPane();
             isSettingsPaneInitialized = true;
@@ -112,6 +119,10 @@ public class Controller {
     private void hideSimulationLabels() {
         inputSimulationLabel.setVisible(false);
         outputSimulationLabel.setVisible(false);
+    }
+
+    private void leaveSimulationMode() {
+        inputTextSimulation.setDisable(true);
     }
 
     /************************************************
@@ -169,7 +180,7 @@ public class Controller {
     public void simulationPressedKey(KeyEvent e) {
         KeyCode pressedKeyCode = e.getCode();
 
-        if (!pressedKeyCode.isLetterKey()) {
+        if (!pressedKeyCode.isLetterKey() || e.isShortcutDown()) {
             String outputText = outputTextSimulation.getText();
             if (e.getCode() == KeyCode.BACK_SPACE && outputText.length() > 0) {
                 outputTextSimulation.setText(outputText.substring(0, outputText.length() - 1));
@@ -199,7 +210,6 @@ public class Controller {
 
     public void importText() {
         System.out.println("import");
-
     }
 
     public void exportText() {
@@ -210,14 +220,20 @@ public class Controller {
 
     }
 
+    /************************************************
+     *              APP INITIALIZATION              *
+     ************************************************/
+
     public void initializeApp() {
         initializeSettingsPane();
-        fireSettingsMenuEvent();
         setUppercaseSimulationInput();
+        disableShortcutsOnInputField(inputTextSimulation);
+        disableShortcutsOnInputField(inputText);
+        disableAltShortcuts();
+        fireSettingsMenuEvent();
         fireResetToDefaultMenuEvent();
 
-
-        openSimulationPane(); //testing
+        openTextboxPane();
     }
 
     private void setUppercaseSimulationInput(){
@@ -230,7 +246,22 @@ public class Controller {
                     }
                 }
         );
+    }
 
+    private void disableShortcutsOnInputField(TextArea input) {
+        input.addEventFilter(KeyEvent.ANY, e -> {
+            if ((e.getCode() == KeyCode.Z || e.getCode() == KeyCode.Y)&& e.isShortcutDown()) {
+                e.consume();
+            }
+        });
+    }
+
+    private void disableAltShortcuts() {
+        anchorPane.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
+            if (e.isAltDown() || KeyCode.ALT_GRAPH == e.getCode()) {
+                e.consume();
+            }
+        });
     }
 
     private void fireSettingsMenuEvent() {
@@ -248,5 +279,4 @@ public class Controller {
             }
         });
     }
-
 }
