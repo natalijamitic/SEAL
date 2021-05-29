@@ -1,5 +1,6 @@
 package mn170085d.gui;
 
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -10,12 +11,23 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import mn170085d.Globals;
 import mn170085d.enigma.Machine;
 
+import java.awt.*;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Date;
+import java.util.Scanner;
+
+import java.nio.charset.StandardCharsets;
 
 
 public class Controller {
@@ -196,7 +208,7 @@ public class Controller {
     }
 
     /************************************************
-     *                  TO BE NAMED                  *
+     *                  TEXT BOX                    *
      ************************************************/
     public void encryptText() {
         String text = this.inputText.getText();
@@ -204,20 +216,33 @@ public class Controller {
         this.updateRotorStates();
     }
 
-    public void decryptText() {
-        encryptText();
+    public void removeText() {
+        this.outputText.setText("");
+        this.inputText.setText("");
     }
 
+    /************************************************
+     *                  IMPORT EXPORT              *
+     ************************************************/
+    private ImportExport importExport;
+
     public void importText() {
-        System.out.println("import");
+        importExport.importText();
+        openTextboxPane();
     }
 
     public void exportText() {
-        System.out.println("export");
+        importExport.exportText();
+    }
+
+    private void createImportExport() {
+        if (importExport == null) {
+            importExport = new ImportExport(anchorPane, inputText, outputText);
+        }
     }
 
     public void quitApp() {
-
+        Platform.exit();
     }
 
     /************************************************
@@ -232,6 +257,8 @@ public class Controller {
         disableAltShortcuts();
         fireSettingsMenuEvent();
         fireResetToDefaultMenuEvent();
+
+        createImportExport();
 
         openTextboxPane();
     }

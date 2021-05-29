@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/mn170085d/gui/ImportExport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seal/assets/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seal/assets/gui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mn170085d/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mn170085d/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mn170085d/enigma/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mn170085d/enigma/Machine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mn170085d/gui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mn170085d/gui/Controller.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -76,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="269" column="18" selection-start-line="269" selection-start-column="18" selection-end-line="269" selection-end-column="18" />
+            <state relative-caret-position="134">
+              <caret line="210" column="36" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4380#4381#0" expanded="true" />
@@ -92,12 +96,65 @@
                 <element signature="e#5157#5158#0" expanded="true" />
                 <element signature="e#5749#5750#0" expanded="true" />
                 <element signature="e#5790#5791#0" expanded="true" />
-                <element signature="e#6836#6837#0" expanded="true" />
-                <element signature="e#6865#6866#0" expanded="true" />
+                <element signature="e#7930#7931#0" expanded="true" />
+                <element signature="e#7971#7972#0" expanded="true" />
+                <element signature="e#8169#8170#0" expanded="true" />
+                <element signature="e#8198#8199#0" expanded="true" />
                 <element signature="e#7289#7753#0" />
                 <element signature="e#7759#8001#0" />
                 <element signature="e#8007#8267#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/ImportExport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_291/src.zip!/java/nio/file/Files.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="3285" column="23" selection-start-line="3285" selection-start-column="23" selection-end-line="3285" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Simulation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="76" column="22" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="76" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_291/src.zip!/java/awt/Desktop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="470">
+              <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_291/src.zip!/java/io/File.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="1014" column="19" selection-start-line="1014" selection-start-column="19" selection-end-line="1014" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -116,10 +173,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mn170085d/Globals.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-682">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mn170085d/enigma/Machine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1906">
-              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            <state relative-caret-position="174">
+              <caret line="28" column="134" lean-forward="true" selection-start-line="28" selection-start-column="134" selection-end-line="28" selection-end-column="134" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,15 +267,16 @@
         <option value="$PROJECT_DIR$/src/mn170085d/enigma/Rotor.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/enigma/ReflectorConfig.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/enigma/Reflector.java" />
+        <option value="$PROJECT_DIR$/src/mn170085d/gui/LineDrawer.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/Globals.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/enigma/Machine.java" />
-        <option value="$PROJECT_DIR$/src/mn170085d/gui/LineDrawer.java" />
+        <option value="$PROJECT_DIR$/src/mn170085d/gui/ImportExport.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/gui/Controller.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="178" />
     <option name="y" value="41" />
     <option name="width" value="1750" />
@@ -270,7 +340,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1622277582166" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1622284659255" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -494,6 +564,18 @@
     <expressions id="watch">
       <expression>
         <expression-string>this.linesMap</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>Character.toUpperCase('A')</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(new Date()).getTime()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -724,32 +806,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Simulation.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_291/src.zip!/java/nio/file/Paths.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="878">
+          <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mn170085d/Globals.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="53" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mn170085d/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2673#2674#0" expanded="true" />
+            <element signature="e#2741#2742#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -765,10 +828,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_291/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="1014" column="19" selection-start-line="1014" selection-start-column="19" selection-end-line="1014" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_291/src.zip!/java/awt/Desktop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mn170085d/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Simulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="76" column="22" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="76" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mn170085d/enigma/Machine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1906">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        <state relative-caret-position="174">
+          <caret line="28" column="134" lean-forward="true" selection-start-line="28" selection-start-column="134" selection-end-line="28" selection-end-column="134" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_291/src.zip!/java/nio/file/Files.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="3285" column="23" selection-start-line="3285" selection-start-column="23" selection-end-line="3285" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/ImportExport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mn170085d/Globals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-682">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -777,8 +901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="269" column="18" selection-start-line="269" selection-start-column="18" selection-end-line="269" selection-end-column="18" />
+        <state relative-caret-position="134">
+          <caret line="210" column="36" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4380#4381#0" expanded="true" />
@@ -793,8 +917,10 @@
             <element signature="e#5157#5158#0" expanded="true" />
             <element signature="e#5749#5750#0" expanded="true" />
             <element signature="e#5790#5791#0" expanded="true" />
-            <element signature="e#6836#6837#0" expanded="true" />
-            <element signature="e#6865#6866#0" expanded="true" />
+            <element signature="e#7930#7931#0" expanded="true" />
+            <element signature="e#7971#7972#0" expanded="true" />
+            <element signature="e#8169#8170#0" expanded="true" />
+            <element signature="e#8198#8199#0" expanded="true" />
             <element signature="e#7289#7753#0" />
             <element signature="e#7759#8001#0" />
             <element signature="e#8007#8267#0" />

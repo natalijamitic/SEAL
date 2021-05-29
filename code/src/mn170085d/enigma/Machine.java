@@ -26,7 +26,7 @@ public class Machine {
         StringBuilder result = new StringBuilder();
 
         for (char letter: text.toCharArray()) {
-            boolean isLetter = Character.isLetter(letter);
+            boolean isLetter = (Character.toUpperCase(letter) >= Globals.A_CODE) && (Character.toUpperCase(letter) <= Globals.Z_CODE);
             if (!isLetter) {
                 result.append(letter);
                 continue;

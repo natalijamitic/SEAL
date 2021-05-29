@@ -1358,7 +1358,7 @@
                         </Label>
                         <TextArea fx:id="inputText" wrapText="true" VBox.vgrow="ALWAYS">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Monospaced Regular" size="16.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="50.0" />
@@ -1376,9 +1376,9 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="outputText" wrapText="true" VBox.vgrow="ALWAYS">
+                        <TextArea fx:id="outputText" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Monospaced Regular" size="16.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="50.0" />
@@ -1391,12 +1391,12 @@
                   </VBox>
                   <VBox alignment="CENTER" fillWidth="false" spacing="40.0" GridPane.columnIndex="1">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#encryptText" prefHeight="58.0" prefWidth="148.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Encrypt">
+                        <Button mnemonicParsing="false" onAction="#encryptText" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Encrypt / Decrypt">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#decryptText" prefHeight="58.0" prefWidth="148.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Decrypt">
+                        <Button mnemonicParsing="false" onAction="#removeText" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Remove Text">
                            <font>
                               <Font size="18.0" />
                            </font>

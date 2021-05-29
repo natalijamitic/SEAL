@@ -10,6 +10,7 @@ import java.util.Map;
 
 public class Globals {
     public static final int A_CODE = 65;
+    public static final int Z_CODE = 90;
     public static final int ALPHABET_SIZE = 26;
 
     public static final int DECRYPT = 0;
@@ -33,6 +34,9 @@ public class Globals {
     public static final Color FORWARD_COLOR = Color.valueOf("#ff0000");
 
     public static final String CSS_CLASS_ON_DISPLAY = "displaying";
+
+    public static final String EXPORT_FILE_NAME = "exportedFileBySEAL";
+    public static final String FILE_EXTENSION = ".txt";
 
     public static final String reflectorTypes[] = {"A", "B", "C"};
     public static final String rotorTypes[] = {"I", "II", "III", "IV", "V"};
