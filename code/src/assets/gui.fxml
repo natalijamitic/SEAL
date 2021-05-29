@@ -44,7 +44,7 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -396,6 +396,75 @@
                   </Label>
                </children>
             </Pane>
+            <GridPane fx:id="textboxPane" alignment="CENTER" style="-fx-background-color: #23ce6e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="468.26666259765625" minWidth="10.0" prefWidth="465.066650390625" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.60003662109375" minWidth="10.0" prefWidth="263.2000488281249" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="467.199951171875" minWidth="10.0" prefWidth="467.199951171875" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="516.3999847412109" minHeight="10.0" prefHeight="511.0666564941406" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                     <children>
+                        <Label text="Input text:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="inputText" wrapText="true" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Monospaced Regular" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                     <padding>
+                        <Insets left="50.0" right="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox GridPane.columnIndex="2" GridPane.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Output text:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="outputText" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Monospaced Regular" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="50.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" fillWidth="false" spacing="40.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#encryptText" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Encrypt / Decrypt">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#removeText" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Remove Text">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="150.0" />
+               </padding>
+            </GridPane>
             <GridPane fx:id="settingsPane" style="-fx-background-color: #f3c3ae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -598,9 +667,9 @@
                                  <children>
                                     <StackPane fx:id="plugboardKeyQ" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -609,28 +678,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
                                              <effect>
-                                                <Blend />
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
                                              </effect>
                                           </Circle>
-                                          <Label text="Q">
+                                          <Label text="Q" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyW" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -639,25 +712,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="W">
+                                          <Label text="W" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyE" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -666,25 +746,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="E">
+                                          <Label text="E" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyR" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -693,25 +780,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="R">
+                                          <Label text="R" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyT" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -720,25 +814,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="T">
+                                          <Label text="T" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyZ" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -747,25 +848,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="Z">
+                                          <Label text="Z" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyU" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -774,25 +882,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="U">
+                                          <Label text="U" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyI" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -801,25 +916,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="I">
+                                          <Label text="I" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyO" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -828,18 +950,43 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="O">
+                                          <Label text="O" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="plugboardKeyO1" onMouseClicked="#selectPlugboardKey">
+                                       <children>
+                                          <Circle fill="RED" radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
+                                          </Circle>
+                                          <Button mnemonicParsing="false" onAction="#resetPlugboard" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent;" text="DEL" textFill="WHITE">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="18.0" />
+                                             </font>
+                                          </Button>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -848,9 +995,9 @@
                                  <children>
                                     <StackPane fx:id="plugboardKeyA" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -859,25 +1006,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="A">
+                                          <Label text="A" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyS" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -886,25 +1040,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="S">
+                                          <Label text="S" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyD" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -913,25 +1074,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="D">
+                                          <Label text="D" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyF" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -940,25 +1108,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="F">
+                                          <Label text="F" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyG" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -967,25 +1142,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="G">
+                                          <Label text="G" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyH" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -994,25 +1176,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="H">
+                                          <Label text="H" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyJ" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1021,25 +1210,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="J">
+                                          <Label text="J" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyK" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1048,16 +1244,23 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="K">
+                                          <Label text="K" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
@@ -1071,9 +1274,9 @@
                                  <children>
                                     <StackPane fx:id="plugboardKeyP" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1082,25 +1285,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="P">
+                                          <Label text="P" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyY" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1109,25 +1319,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="Y">
+                                          <Label text="Y" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyX" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1136,25 +1353,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="X">
+                                          <Label text="X" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyC" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1163,25 +1387,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="C">
+                                          <Label text="C" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyV" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1190,25 +1421,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="V">
+                                          <Label text="V" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyB" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1217,25 +1455,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="B">
+                                          <Label text="B" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyN" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1244,25 +1489,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="N">
+                                          <Label text="N" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyM" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1271,25 +1523,32 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="M">
+                                          <Label text="M" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </StackPane>
                                     <StackPane fx:id="plugboardKeyL" onMouseClicked="#selectPlugboardKey">
                                        <children>
-                                          <Circle radius="25.0" stroke="BLACK" strokeType="INSIDE">
+                                          <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                              <fill>
-                                                <LinearGradient cycleMethod="REFLECT" endX="0.7099236859620073" endY="0.7595419956527594" startX="0.15648855962826097" startY="0.19465643030996543">
+                                                <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.7137403051361784">
                                                    <stops>
                                                       <Stop>
                                                          <color>
@@ -1298,16 +1557,23 @@
                                                       </Stop>
                                                       <Stop offset="1.0">
                                                          <color>
-                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                            <Color red="0.8105263113975525" green="0.8105263113975525" blue="0.8105263113975525" />
                                                          </color>
                                                       </Stop>
                                                    </stops>
                                                 </LinearGradient>
                                              </fill>
+                                             <effect>
+                                                <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                   <color>
+                                                      <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </Circle>
-                                          <Label text="L">
+                                          <Label text="L" textFill="WHITE">
                                              <font>
-                                                <Font name="Arial Black" size="32.0" />
+                                                <Font name="Monospaced Regular" size="32.0" />
                                              </font>
                                           </Label>
                                        </children>
@@ -1315,15 +1581,10 @@
                                  </children>
                               </HBox>
                            </children>
+                           <VBox.margin>
+                              <Insets left="100.0" />
+                           </VBox.margin>
                         </Group>
-                        <Button mnemonicParsing="false" onAction="#resetPlugboard" text="Reset Plugboard">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
-                           </padding>
-                        </Button>
                      </children>
                   </VBox>
                   <Button mnemonicParsing="false" onAction="#saveSettings" style="-fx-background-radius: 10;" text="SAVE SETTINGS" textAlignment="CENTER" wrapText="true" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
@@ -1337,75 +1598,6 @@
                </children>
                <padding>
                   <Insets top="10.0" />
-               </padding>
-            </GridPane>
-            <GridPane fx:id="textboxPane" alignment="CENTER" style="-fx-background-color: #23ce6e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="468.26666259765625" minWidth="10.0" prefWidth="465.066650390625" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.60003662109375" minWidth="10.0" prefWidth="263.2000488281249" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="467.199951171875" minWidth="10.0" prefWidth="467.199951171875" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="516.3999847412109" minHeight="10.0" prefHeight="511.0666564941406" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <VBox GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
-                     <children>
-                        <Label text="Input text:">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextArea fx:id="inputText" wrapText="true" VBox.vgrow="ALWAYS">
-                           <font>
-                              <Font name="Monospaced Regular" size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="50.0" />
-                           </VBox.margin>
-                        </TextArea>
-                     </children>
-                     <padding>
-                        <Insets left="50.0" right="20.0" />
-                     </padding>
-                  </VBox>
-                  <VBox GridPane.columnIndex="2" GridPane.hgrow="ALWAYS">
-                     <children>
-                        <Label text="Output text:">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextArea fx:id="outputText" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
-                           <font>
-                              <Font name="Monospaced Regular" size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="50.0" />
-                           </VBox.margin>
-                        </TextArea>
-                     </children>
-                     <padding>
-                        <Insets left="20.0" right="50.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="CENTER" fillWidth="false" spacing="40.0" GridPane.columnIndex="1">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#encryptText" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Encrypt / Decrypt">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#removeText" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Remove Text">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </VBox>
-               </children>
-               <padding>
-                  <Insets top="150.0" />
                </padding>
             </GridPane>
          </children>

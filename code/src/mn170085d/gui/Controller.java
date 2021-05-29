@@ -151,7 +151,7 @@ public class Controller {
             createNewSettings();
         }
 
-        settings.resetPlugboard();
+        resetPlugboard();
         settings.resetRotorsAndReflector();
 
         if (this.machine == null) {

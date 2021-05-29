@@ -11,9 +11,10 @@ import mn170085d.enigma.Machine;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Settings {
-    private static final String colors[] = {"ff99c8", "fcf6bd", "5d2e46", "b58db6", "f79d84", "d0f4de", "fac05e", "3fa7d6", "a9def9", "e4c1f9", "59cd90", "ee6352", "3a5a40"};
+    private static final String colors[] = {"ff99c8","5d2e46", "b58db6", "f79d84", "fac05e", "3fa7d6", "a9def9", "e4c1f9", "59cd90", "ee6352", "b63c64", "d6e87a", "13697a"};
     private List<PlugboardKey> allPlugboardKeys = new ArrayList<>();
     private List<Paint> freeColors = new ArrayList<>();
     private Paint currentColor = null;
@@ -37,41 +38,40 @@ public class Settings {
     }
 
     public void resetRotorsAndReflector() {
-        this.reflectorTypes.setItems(FXCollections.observableArrayList(Globals.reflectorTypes));
-        this.reflectorTypes.setValue(Globals.reflectorTypes[0]);
-        this.leftRotorTypes.setItems(FXCollections.observableArrayList(Globals.rotorTypes));
-        this.leftRotorTypes.setValue(Globals.rotorTypes[0]);
-        this.leftRotorStart.setItems(FXCollections.observableArrayList(Globals.alphabet));
-        this.leftRotorStart.setValue(Globals.alphabet[0]);
-        this.leftRotorRing.setItems(FXCollections.observableArrayList(Globals.alphabet));
-        this.leftRotorRing.setValue(Globals.alphabet[0]);
-        this.middleRotorTypes.setItems(FXCollections.observableArrayList(Globals.rotorTypes));
-        this.middleRotorTypes.setValue(Globals.rotorTypes[0]);
-        this.middleRotorStart.setItems(FXCollections.observableArrayList(Globals.alphabet));
-        this.middleRotorStart.setValue(Globals.alphabet[0]);
-        this.middleRotorRing.setItems(FXCollections.observableArrayList(Globals.alphabet));
-        this.middleRotorRing.setValue(Globals.alphabet[0]);
-        this.rightRotorTypes.setItems(FXCollections.observableArrayList(Globals.rotorTypes));
-        this.rightRotorTypes.setValue(Globals.rotorTypes[0]);
-        this.rightRotorStart.setItems(FXCollections.observableArrayList(Globals.alphabet));
-        this.rightRotorStart.setValue(Globals.alphabet[0]);
-        this.rightRotorRing.setItems(FXCollections.observableArrayList(Globals.alphabet));
-        this.rightRotorRing.setValue(Globals.alphabet[0]);
+        reflectorTypes.setItems(FXCollections.observableArrayList(Globals.reflectorTypes));
+        reflectorTypes.setValue(Globals.reflectorTypes[0]);
+        leftRotorTypes.setItems(FXCollections.observableArrayList(Globals.rotorTypes));
+        leftRotorTypes.setValue(Globals.rotorTypes[0]);
+        leftRotorStart.setItems(FXCollections.observableArrayList(Globals.alphabet));
+        leftRotorStart.setValue(Globals.alphabet[0]);
+        leftRotorRing.setItems(FXCollections.observableArrayList(Globals.alphabet));
+        leftRotorRing.setValue(Globals.alphabet[0]);
+        middleRotorTypes.setItems(FXCollections.observableArrayList(Globals.rotorTypes));
+        middleRotorTypes.setValue(Globals.rotorTypes[0]);
+        middleRotorStart.setItems(FXCollections.observableArrayList(Globals.alphabet));
+        middleRotorStart.setValue(Globals.alphabet[0]);
+        middleRotorRing.setItems(FXCollections.observableArrayList(Globals.alphabet));
+        middleRotorRing.setValue(Globals.alphabet[0]);
+        rightRotorTypes.setItems(FXCollections.observableArrayList(Globals.rotorTypes));
+        rightRotorTypes.setValue(Globals.rotorTypes[0]);
+        rightRotorStart.setItems(FXCollections.observableArrayList(Globals.alphabet));
+        rightRotorStart.setValue(Globals.alphabet[0]);
+        rightRotorRing.setItems(FXCollections.observableArrayList(Globals.alphabet));
+        rightRotorRing.setValue(Globals.alphabet[0]);
     }
 
     public void selectPlugboardKey(Event e) {
         StackPane stackPane = (StackPane)e.getSource();
         char plugboardKeyId = stackPane.getId().charAt(stackPane.getId().length() - 1);
         int plugboardKeyIndex = (int)plugboardKeyId - Globals.A_CODE;
-        PlugboardKey plugboardKey = this.allPlugboardKeys.get(plugboardKeyIndex);
+        PlugboardKey plugboardKey = allPlugboardKeys.get(plugboardKeyIndex);
         Circle plugboardKeyCircle = (Circle)(stackPane.getChildren().get(0));
         if (plugboardKey.getMyCircle() == null) {
             plugboardKey.setMyCircle(plugboardKeyCircle);
         }
 
         if (currentPlugboardKey == null) {
-            // if I wasn't matched then remember me for next matching
-            // else if I was matched then unmatch me now from my pair
+            // if I was matched then unmatch me now from my pair
             if (plugboardKey.isMatched()) {
                 PlugboardKey plugboardPair = plugboardKey.getPair();
                 plugboardPair.unmatch();
@@ -80,15 +80,19 @@ public class Settings {
                 plugboardKey.unmatch();
             }
 
+            // remember me for next matching
             currentPlugboardKey = plugboardKey;
-            currentColor = freeColors.remove(0);
+            int random = (new Random()).nextInt(freeColors.size());
+            currentColor = freeColors.remove(random);
             plugboardKeyCircle.setFill(currentColor);
         } else {
             // if clicked on myself again - unselect myself
             // else I have a new match (check if my new match was already matched or not)
             if (currentPlugboardKey.equals(plugboardKey)) {
-                plugboardKeyCircle.setFill(Globals.DEFAULT_PAINT);
+                plugboardKeyCircle.setFill(Globals.PLUGBOARD_GRADIENT);
+                freeColors.add(currentColor);
             } else {
+                // if my new match was already matched, unmatch that pair
                 if (plugboardKey.isMatched()) {
                     PlugboardKey plugboardPair = plugboardKey.getPair();
                     freeColors.add(plugboardPair.getMyCircle().getFill());
@@ -104,7 +108,7 @@ public class Settings {
     }
 
     public void resetPlugboard() {
-        this.initializeColors();
+        initializeColors();
 
         currentPlugboardKey = null;
 
@@ -159,15 +163,16 @@ public class Settings {
         return allPlugboardKeys;
     }
 
-    public void setMachine(Machine machine) {
-        this.machine = machine;
+    public void setMachine(Machine newMachine) {
+        machine = newMachine;
 
-        this.configureRotors();
-        this.configurePlugboard();
+        configureRotors();
+        configurePlugboard();
     }
 
     private void initializeColors() {
         currentColor = null;
+        freeColors.clear();
         for (String color: colors) {
             freeColors.add(Paint.valueOf(color));
         }

@@ -1,7 +1,6 @@
 package mn170085d;
 
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
+import javafx.scene.paint.*;
 import mn170085d.enigma.ReflectorConfig;
 import mn170085d.enigma.RotorConfig;
 
@@ -32,6 +31,8 @@ public class Globals {
     public static final Paint FORWARD_PAINT = Paint.valueOf("#ff0000");
     public static final Color BACK_COLOR = Color.valueOf("#ffea00");
     public static final Color FORWARD_COLOR = Color.valueOf("#ff0000");
+
+    public static final LinearGradient PLUGBOARD_GRADIENT = new LinearGradient(0.165, 1, 0.5, 0.70, true, CycleMethod.NO_CYCLE, new Stop(1,Color.BLACK), new Stop(0, Color.color(0.81, 0.81, 0.81)));
 
     public static final String CSS_CLASS_ON_DISPLAY = "displaying";
 

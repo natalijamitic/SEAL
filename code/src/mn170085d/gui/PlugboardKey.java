@@ -15,25 +15,25 @@ public class PlugboardKey {
     }
 
     public void unmatch() {
-        this.matched = false;
-        this.pair = null;
-        if (this.myCircle != null) {
-            this.myCircle.setFill(Globals.DEFAULT_PAINT);
+        matched = false;
+        pair = null;
+        if (myCircle != null) {
+            myCircle.setFill(Globals.PLUGBOARD_GRADIENT);
         }
     }
 
-    public void match(PlugboardKey pair, Paint color) {
-        this.matched = true;
-        this.pair = pair;
-        this.myCircle.setFill(color);
+    public void match(PlugboardKey newPair, Paint color) {
+        matched = true;
+        pair = newPair;
+        myCircle.setFill(color);
     }
 
     public Circle getMyCircle() {
         return myCircle;
     }
 
-    public void setMyCircle(Circle myCircle) {
-        this.myCircle = myCircle;
+    public void setMyCircle(Circle newCircle) {
+        myCircle = newCircle;
     }
 
     public char getId() {
@@ -44,15 +44,7 @@ public class PlugboardKey {
         return matched;
     }
 
-    public void setMatched(Boolean matched) {
-        this.matched = matched;
-    }
-
     public PlugboardKey getPair() {
         return pair;
-    }
-
-    public void setPair(PlugboardKey pair) {
-        this.pair = pair;
     }
 }
