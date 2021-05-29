@@ -5,10 +5,7 @@ import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -43,6 +40,10 @@ public class Controller {
     Rectangle leftRotorRectangle, rightRotorRectangle, middleRotorRectangle;
     @FXML
     ImageView sealImg, enigmaImg;
+    @FXML
+    ToggleGroup displayMode;
+    @FXML
+    RadioMenuItem textBoxMenuItem;
 
     private boolean isSettingsPaneInitialized = false, isKeyboardModeActive = false;
 
@@ -87,6 +88,7 @@ public class Controller {
         leaveSimulationMode();
         leaveKeyboardMode();
         textboxPane.toFront();
+        textBoxMenuItem.setSelected(true);
         bringRotorStatesToFront(true);
     }
     public void openKeyboardPane() {

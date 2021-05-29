@@ -87,7 +87,7 @@
               </Menu>
                   <Menu fx:id="modeMenu" mnemonicParsing="false" text="Mode">
                      <items>
-                        <RadioMenuItem mnemonicParsing="false" onAction="#openTextboxPane" selected="true" text="Textbox">
+                        <RadioMenuItem fx:id="textBoxMenuItem" mnemonicParsing="false" onAction="#openTextboxPane" selected="true" text="Textbox">
                            <toggleGroup>
                               <ToggleGroup fx:id="displayMode" />
                            </toggleGroup>
