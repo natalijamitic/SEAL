@@ -3,7 +3,9 @@ package mn170085d.gui;
 import javafx.animation.Animation;
 import javafx.animation.PauseTransition;
 import javafx.event.Event;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
@@ -24,9 +26,12 @@ public class Keyboard {
         this.outputLabel = outputLabel;
     }
 
-    public void selectKey(Event e) {
-        StackPane stackPane = (StackPane)e.getSource();
+    public void pressedKey(KeyEvent e, Scene scene) {
+        StackPane keyboard = (StackPane)scene.lookup("#keyboardKey" + e.getText().toUpperCase());
+        selectKey(keyboard);
+    }
 
+    public void selectKey(StackPane stackPane) {
         stackPane.setTranslateY(CLICK_TRANSLATION);
         PauseTransition pause = new PauseTransition(Duration.seconds(0.1));
         pause.setOnFinished(event -> stackPane.setTranslateY(0));
@@ -41,8 +46,7 @@ public class Keyboard {
         lampboardTransition.play();
 
         if (inputLabel.getText().length() == 79) {
-            inputLabel.setText("");
-            outputLabel.setText("");
+            deleteLabels();
         }
         inputLabel.setText(inputLabel.getText() + key);
         outputLabel.setText(outputLabel.getText() + output);
@@ -50,6 +54,11 @@ public class Keyboard {
 
     public void setMachine(Machine newMachine) {
         machine = newMachine;
+    }
+
+    public void deleteLabels(){
+        inputLabel.setText("");
+        outputLabel.setText("");
     }
 
     private void stopPreviousLampboardKey(){

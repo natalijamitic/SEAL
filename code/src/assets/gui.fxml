@@ -407,6 +407,64 @@
                   <Insets top="150.0" />
                </padding>
             </GridPane>
+            <GridPane fx:id="rotorStatePane" maxWidth="500.0" prefWidth="400.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="69.0000213623047" minHeight="10.0" prefHeight="46.3333251953125" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="102.06666412353516" minHeight="10.0" prefHeight="82.86667480468749" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label fx:id="leftRotorLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="170.0" text="Left Rotor" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="middleRotorLabel" alignment="CENTER" maxWidth="170.0" text="Middle Rotor" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="rightRotorLabel" alignment="CENTER" maxWidth="170.0" text="Right Rotor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <StackPane maxWidth="170.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Rectangle fx:id="leftRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+                        <Label fx:id="leftRotorState" text="A">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="170.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Rectangle fx:id="middleRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+                        <Label fx:id="middleRotorState" text="A">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="170.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Rectangle fx:id="rightRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+                        <Label fx:id="rightRotorState" text="A">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </GridPane>
             <GridPane fx:id="settingsPane" style="-fx-background-color: #acd4f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1871,6 +1929,24 @@
                                                 </Label>
                                              </children>
                                           </StackPane>
+                                          <StackPane onMouseClicked="#selectPlugboardKey">
+                                             <children>
+                                                <Circle fill="RED" radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Button mnemonicParsing="false" onAction="#keyboardDelete" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent;" text="DEL" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="18.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </StackPane>
                                        </children>
                                     </HBox>
                                     <HBox spacing="50.0">
@@ -2464,6 +2540,9 @@
                                     </HBox>
                                     <Label prefHeight="18.0" prefWidth="895.0" />
                                  </children>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
                               </VBox>
                            </children>
                            <VBox.margin>
@@ -2873,64 +2952,6 @@
                         <Insets bottom="100.0" />
                      </GridPane.margin>
                   </VBox>
-               </children>
-            </GridPane>
-            <GridPane fx:id="rotorStatePane" maxWidth="500.0" prefWidth="400.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="69.0000213623047" minHeight="10.0" prefHeight="46.3333251953125" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="102.06666412353516" minHeight="10.0" prefHeight="82.86667480468749" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Label fx:id="leftRotorLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="170.0" text="Left Rotor" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="middleRotorLabel" alignment="CENTER" maxWidth="170.0" text="Middle Rotor" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="rightRotorLabel" alignment="CENTER" maxWidth="170.0" text="Right Rotor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <StackPane maxWidth="170.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <children>
-                        <Rectangle fx:id="leftRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
-                        <Label fx:id="leftRotorState" text="A">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </StackPane>
-                  <StackPane maxWidth="170.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <children>
-                        <Rectangle fx:id="middleRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
-                        <Label fx:id="middleRotorState" text="A">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </StackPane>
-                  <StackPane maxWidth="170.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <children>
-                        <Rectangle fx:id="rightRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
-                        <Label fx:id="rightRotorState" text="A">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </StackPane>
                </children>
             </GridPane>
          </children>

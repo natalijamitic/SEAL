@@ -3,6 +3,7 @@ package mn170085d.gui;
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
@@ -38,7 +39,7 @@ public class Controller {
     @FXML
     Rectangle leftRotorRectangle, rightRotorRectangle, middleRotorRectangle;
 
-    private Boolean isSettingsPaneInitialized = false;
+    private boolean isSettingsPaneInitialized = false, isKeyboardModeActive = false;
 
     /************************************************
      *                  MACHINE                     *
@@ -79,6 +80,7 @@ public class Controller {
     public void openTextboxPane() {
         removeDisplayingClass(settingsMenu);
         leaveSimulationMode();
+        leaveKeyboardMode();
         textboxPane.toFront();
         bringRotorStatesToFront(true);
     }
@@ -90,10 +92,12 @@ public class Controller {
             createNewKeyboard();
         }
 
+        isKeyboardModeActive = true;
         keyboardPane.toFront();
         bringRotorStatesToFront(false);
     }
     public void openSimulationPane() {
+        leaveKeyboardMode();
         removeDisplayingClass(settingsMenu);
         inputTextSimulation.setDisable(false);
         if (simulation == null) {
@@ -109,6 +113,7 @@ public class Controller {
         refreshWires();
     }
     public void openSettingsPane() {
+        leaveKeyboardMode();
         leaveSimulationMode();
         if (!isSettingsPaneInitialized) {
             initializeSettingsPane();
@@ -142,6 +147,9 @@ public class Controller {
         inputTextSimulation.setDisable(true);
     }
 
+    private void leaveKeyboardMode() {
+        isKeyboardModeActive = false;
+    }
     /************************************************
      *                  SETTINGS PANE               *
      ************************************************/
@@ -260,9 +268,13 @@ public class Controller {
     }
 
     public void keyboardSelectKey(Event e) {
-        keyboard.selectKey(e);
+        keyboard.selectKey((StackPane)e.getSource());
         updateRotorStates(false);
 
+    }
+
+    public void keyboardDelete() {
+        keyboard.deleteLabels();
     }
     /************************************************
      *              APP INITIALIZATION              *
@@ -270,16 +282,35 @@ public class Controller {
 
     public void initializeApp() {
         initializeSettingsPane();
+
         setUppercaseSimulationInput();
         disableShortcutsOnInputField(inputTextSimulation);
         disableShortcutsOnInputField(inputText);
         disableAltShortcuts();
+
         fireSettingsMenuEvent();
         fireResetToDefaultMenuEvent();
+        fireKeyEventsKeyboardMode();
 
         createImportExport();
-
         openTextboxPane();
+    }
+
+    private void fireKeyEventsKeyboardMode() {
+        Scene scene = keyboardPane.getScene();
+        scene.addEventFilter(KeyEvent.KEY_RELEASED, event -> {
+            if (isKeyboardModeActive) {
+                if (event.getCode() == KeyCode.BACK_SPACE) {
+                    keyboardDelete();
+                }
+                if (event.isShortcutDown() || !event.getCode().isLetterKey() || event.getText().length() == 0) {
+                    event.consume();
+                } else {
+                    keyboard.pressedKey(event, scene);
+                    updateRotorStates(false);
+                }
+            }
+        });
     }
 
     private void setUppercaseSimulationInput(){
