@@ -470,7 +470,7 @@
                   </VBox>
                   <VBox alignment="CENTER" fillWidth="false" spacing="40.0" GridPane.columnIndex="1">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#encryptText" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Encrypt / Decrypt">
+                        <Button mnemonicParsing="false" onAction="#encryptText" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #c08497; -fx-background-radius: 15;" text="Encrypt">
                            <font>
                               <Font size="18.0" />
                            </font>
