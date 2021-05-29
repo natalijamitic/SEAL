@@ -44,6 +44,7 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -89,8 +90,8 @@
                               <ToggleGroup fx:id="displayMode" />
                            </toggleGroup>
                         </RadioMenuItem>
-                        <RadioMenuItem mnemonicParsing="false" onAction="#openKeyboardPane" text="Keyboard" toggleGroup="$displayMode" />
                         <RadioMenuItem mnemonicParsing="false" onAction="#openSimulationPane" text="Simulation" toggleGroup="$displayMode" />
+                        <RadioMenuItem mnemonicParsing="false" onAction="#openKeyboardPane" text="Keyboard" toggleGroup="$displayMode" />
                      </items>
                   </Menu>
                   <Menu fx:id="settingsMenu" mnemonicParsing="false" onAction="#openSettingsPane" text="Settings">
@@ -1541,7 +1542,1339 @@
                   <Insets top="10.0" />
                </padding>
             </GridPane>
-            <Pane fx:id="keyboardPane" layoutX="-1.0" layoutY="-1.0" style="-fx-background-color: #263238;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <GridPane fx:id="keyboardPane" alignment="CENTER" style="-fx-background-color: #2e303c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" spacing="20.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="keyboardInputLabel" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Monospaced Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Group>
+                           <children>
+                              <VBox layoutX="-6.0" layoutY="-3.0">
+                                 <children>
+                                    <HBox spacing="50.0">
+                                       <children>
+                                          <StackPane fx:id="keyboardKeyQ" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="Q" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyW" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="W" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyE" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="E" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyR" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="R" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyT" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="T" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyZ" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="Z" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyU" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="U" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyI" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="I" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyO" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="O" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="50.0">
+                                       <children>
+                                          <StackPane fx:id="keyboardKeyA" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="A" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyS" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="S" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyD" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="D" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyF" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="F" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyG" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="G" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyH" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="H" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyJ" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="J" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyK" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="K" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                       </children>
+                                       <padding>
+                                          <Insets left="50.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox spacing="50.0">
+                                       <children>
+                                          <StackPane fx:id="keyboardKeyP" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="P" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyY" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="Y" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyX" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="X" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyC" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="C" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyV" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="V" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyB" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="B" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyN" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="N" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyM" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="M" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane fx:id="keyboardKeyL" onMouseClicked="#keyboardSelectKey">
+                                             <children>
+                                                <Circle radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
+                                                   <fill>
+                                                      <LinearGradient endX="0.16793892356275603" endY="1.0" startX="0.4961832497866099" startY="0.5496181604516416">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.5567251443862915" green="0.5837426781654358" blue="0.7368420958518982" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                   <effect>
+                                                      <DropShadow height="0.0" radius="3.5575" spread="0.23" width="16.23">
+                                                         <color>
+                                                            <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </Circle>
+                                                <Label text="L" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Monospaced Bold" size="32.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                       </children>
+                                    </HBox>
+                                    <Label prefHeight="18.0" prefWidth="895.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Group>
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="80.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="20.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Label fx:id="keyboardOutputLabel" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Monospaced Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Group>
+                           <children>
+                              <HBox spacing="50.0">
+                                 <children>
+                                    <StackPane fx:id="lampboardKeyQ">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="Q" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyW">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="W" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyE">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="E" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyR">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="R" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyT">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="T" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyZ">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="Z" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyU">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="U" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyI">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="I" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyO">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="O" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                              <HBox layoutY="50.39999771118164" spacing="50.0">
+                                 <children>
+                                    <StackPane fx:id="lampboardKeyA">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="A" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyS">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="S" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyD">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="D" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyF">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="F" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyG">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="G" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyH">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="H" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyJ">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="J" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyK">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="K" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox layoutY="100.79999923706055" spacing="50.0">
+                                 <children>
+                                    <StackPane fx:id="lampboardKeyP">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="P" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyY">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="Y" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyX">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="X" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyC">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="C" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyV">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="V" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyB">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="B" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyN">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="N" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyM">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="M" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="lampboardKeyL">
+                                       <children>
+                                          <Circle fill="#26232478" radius="25.0" stroke="#1e1e1e" strokeType="OUTSIDE" strokeWidth="2.0">
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Circle>
+                                          <Label text="L" textFill="#33332e">
+                                             <font>
+                                                <Font name="Monospaced Bold" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Group>
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="100.0" />
+                     </GridPane.margin>
+                  </VBox>
+               </children>
+            </GridPane>
             <GridPane fx:id="rotorStatePane" maxWidth="500.0" prefWidth="400.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1553,24 +2886,24 @@
                   <RowConstraints maxHeight="102.06666412353516" minHeight="10.0" prefHeight="82.86667480468749" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="170.0" text="Left Rotor" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="leftRotorLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="170.0" text="Left Rotor" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" maxWidth="170.0" text="Middle Rotor" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="middleRotorLabel" alignment="CENTER" maxWidth="170.0" text="Middle Rotor" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" maxWidth="170.0" text="Right Rotor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="rightRotorLabel" alignment="CENTER" maxWidth="170.0" text="Right Rotor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                   <StackPane maxWidth="170.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+                        <Rectangle fx:id="leftRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
                         <Label fx:id="leftRotorState" text="A">
                            <font>
                               <Font size="24.0" />
@@ -1580,7 +2913,7 @@
                   </StackPane>
                   <StackPane maxWidth="170.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+                        <Rectangle fx:id="middleRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
                         <Label fx:id="middleRotorState" text="A">
                            <font>
                               <Font size="24.0" />
@@ -1590,7 +2923,7 @@
                   </StackPane>
                   <StackPane maxWidth="170.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+                        <Rectangle fx:id="rightRotorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
                         <Label fx:id="rightRotorState" text="A">
                            <font>
                               <Font size="24.0" />

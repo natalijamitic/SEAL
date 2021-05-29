@@ -11,24 +11,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Rectangle;
 import mn170085d.Globals;
 import mn170085d.enigma.Machine;
-
-import java.awt.*;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Date;
-import java.util.Scanner;
-
-import java.nio.charset.StandardCharsets;
-
 
 public class Controller {
     @FXML
@@ -42,13 +28,15 @@ public class Controller {
     @FXML
     Label plugboardLeft, plugboardRight, leftRotorLeft, leftRotorRight, middleRotorLeft, middleRotorRight;
     @FXML
-    Label rightRotorLeft, rightRotorRight, reflectorRight;
+    Label rightRotorLeft, rightRotorRight, reflectorRight, rightRotorLabel, middleRotorLabel, leftRotorLabel, keyboardInputLabel, keyboardOutputLabel;
     @FXML
     TextArea inputText, outputText, inputTextSimulation, outputTextSimulation;
     @FXML
     Menu settingsMenu, modeMenu, resetToDefaultMenu;
     @FXML
     AnchorPane anchorPane;
+    @FXML
+    Rectangle leftRotorRectangle, rightRotorRectangle, middleRotorRectangle;
 
     private Boolean isSettingsPaneInitialized = false;
 
@@ -65,14 +53,23 @@ public class Controller {
         if (simulation != null) {
             simulation.setMachine(machine);
         }
-        updateRotorStates();
+        if (keyboard != null) {
+            keyboard.setMachine(machine);
+        }
+        updateRotorStates(true);
         hideSimulationLabels();
     }
 
-    private void updateRotorStates() {
-        this.leftRotorState.setText(Character.toString((char)(machine.getRotor(Globals.SLOW_ROTOR).getOffset() + Globals.A_CODE)));
-        this.middleRotorState.setText(Character.toString((char)(machine.getRotor(Globals.MID_ROTOR).getOffset() + Globals.A_CODE)));
-        this.rightRotorState.setText(Character.toString((char)(machine.getRotor(Globals.FAST_ROTOR).getOffset() + Globals.A_CODE)));
+    private void updateRotorStates(boolean displayLabels) {
+        leftRotorLabel.setVisible(displayLabels);
+        middleRotorLabel.setVisible(displayLabels);
+        rightRotorLabel.setVisible(displayLabels);
+        leftRotorRectangle.setFill(displayLabels ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
+        middleRotorRectangle.setFill(displayLabels ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
+        rightRotorRectangle.setFill(displayLabels ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
+        leftRotorState.setText(Character.toString((char)(machine.getRotor(Globals.SLOW_ROTOR).getOffset() + Globals.A_CODE)));
+        middleRotorState.setText(Character.toString((char)(machine.getRotor(Globals.MID_ROTOR).getOffset() + Globals.A_CODE)));
+        rightRotorState.setText(Character.toString((char)(machine.getRotor(Globals.FAST_ROTOR).getOffset() + Globals.A_CODE)));
     }
 
 
@@ -80,19 +77,24 @@ public class Controller {
      *                  HANDLE PANES                *
      ************************************************/
     public void openTextboxPane() {
-        setDisplayingClass(modeMenu, settingsMenu);
+        removeDisplayingClass(settingsMenu);
         leaveSimulationMode();
         textboxPane.toFront();
-        bringRotorStatesToFront();
+        bringRotorStatesToFront(true);
     }
     public void openKeyboardPane() {
-        setDisplayingClass(modeMenu, settingsMenu);
+        removeDisplayingClass(settingsMenu);
         leaveSimulationMode();
+
+        if (keyboard == null) {
+            createNewKeyboard();
+        }
+
         keyboardPane.toFront();
-        bringRotorStatesToFront();
+        bringRotorStatesToFront(false);
     }
     public void openSimulationPane() {
-        setDisplayingClass(modeMenu, settingsMenu);
+        removeDisplayingClass(settingsMenu);
         inputTextSimulation.setDisable(false);
         if (simulation == null) {
             createNewSimulation();
@@ -100,7 +102,7 @@ public class Controller {
 
         simulationPane.toFront();
         drawingPane.toFront();
-        bringRotorStatesToFront();
+        bringRotorStatesToFront(true);
 
         hideSimulationLabels();
 
@@ -112,19 +114,22 @@ public class Controller {
             initializeSettingsPane();
             isSettingsPaneInitialized = true;
         }
-        setDisplayingClass(settingsMenu, modeMenu);
+        setDisplayingClass(settingsMenu);
         settingsPane.toFront();
     }
 
-    private void bringRotorStatesToFront() {
+    private void bringRotorStatesToFront(boolean displayLabels) {
         rotorStatePane.toFront();
-        updateRotorStates();
+        updateRotorStates(displayLabels);
     }
 
-    private void setDisplayingClass(Menu menuToSet, Menu menuToRemove) {
+    private void setDisplayingClass(Menu menuToSet) {
         if (!menuToSet.getStyleClass().contains(Globals.CSS_CLASS_ON_DISPLAY)) {
             menuToSet.getStyleClass().add(Globals.CSS_CLASS_ON_DISPLAY);
         }
+    }
+
+    private void removeDisplayingClass(Menu menuToRemove) {
         menuToRemove.getStyleClass().remove(Globals.CSS_CLASS_ON_DISPLAY);
     }
 
@@ -204,16 +209,16 @@ public class Controller {
 
         char output = simulation.simulateCryption(pressedKeyCode.getName().charAt(0));
         outputTextSimulation.appendText(Character.toString(output));
-        updateRotorStates();
+        updateRotorStates(true);
     }
 
     /************************************************
      *                  TEXT BOX                    *
      ************************************************/
     public void encryptText() {
-        String text = this.inputText.getText();
-        this.outputText.setText(machine.cryptText(text));
-        this.updateRotorStates();
+        String text = inputText.getText();
+        outputText.setText(machine.cryptText(text));
+        updateRotorStates(true);
     }
 
     public void removeText() {
@@ -227,8 +232,8 @@ public class Controller {
     private ImportExport importExport;
 
     public void importText() {
-        importExport.importText();
         openTextboxPane();
+        importExport.importText();
     }
 
     public void exportText() {
@@ -245,6 +250,20 @@ public class Controller {
         Platform.exit();
     }
 
+    /************************************************
+     *                 KEYBOARD MODE                *
+     ************************************************/
+    private Keyboard keyboard;
+
+    private void createNewKeyboard() {
+        keyboard = new Keyboard(machine, keyboardInputLabel, keyboardOutputLabel);
+    }
+
+    public void keyboardSelectKey(Event e) {
+        keyboard.selectKey(e);
+        updateRotorStates(false);
+
+    }
     /************************************************
      *              APP INITIALIZATION              *
      ************************************************/
