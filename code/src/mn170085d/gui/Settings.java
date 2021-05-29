@@ -3,6 +3,7 @@ package mn170085d.gui;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -21,9 +22,9 @@ public class Settings {
     private PlugboardKey currentPlugboardKey = null;
     private Machine machine;
 
-    private ChoiceBox<String> reflectorTypes, leftRotorTypes, middleRotorTypes, rightRotorTypes, leftRotorStart, middleRotorStart, rightRotorStart, leftRotorRing, middleRotorRing, rightRotorRing;
+    private ComboBox<String> reflectorTypes, leftRotorTypes, middleRotorTypes, rightRotorTypes, leftRotorStart, middleRotorStart, rightRotorStart, leftRotorRing, middleRotorRing, rightRotorRing;
 
-    public Settings(Machine machine, ChoiceBox<String> reflectorTypes, ChoiceBox<String> leftRotorTypes, ChoiceBox<String> middleRotorTypes, ChoiceBox<String> rightRotorTypes, ChoiceBox<String> leftRotorStart, ChoiceBox<String> middleRotorStart, ChoiceBox<String> rightRotorStart, ChoiceBox<String> leftRotorRing, ChoiceBox<String> middleRotorRing, ChoiceBox<String> rightRotorRing) {
+    public Settings(Machine machine, ComboBox<String> reflectorTypes, ComboBox<String> leftRotorTypes, ComboBox<String> middleRotorTypes, ComboBox<String> rightRotorTypes, ComboBox<String> leftRotorStart, ComboBox<String> middleRotorStart, ComboBox<String> rightRotorStart, ComboBox<String> leftRotorRing, ComboBox<String> middleRotorRing, ComboBox<String> rightRotorRing) {
         this.machine = machine;
         this.reflectorTypes = reflectorTypes;
         this.leftRotorTypes = leftRotorTypes;

@@ -2,6 +2,7 @@ package mn170085d.gui;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -21,9 +22,9 @@ public class Controller {
     @FXML
     Pane textboxPane, keyboardPane, simulationPane, settingsPane, rotorStatePane, drawingPane, loadingPane;
     @FXML
-    ChoiceBox<String> reflectorTypes, leftRotorTypes, middleRotorTypes, rightRotorTypes, leftRotorStart;
+    ComboBox<String> reflectorTypes, leftRotorTypes, middleRotorTypes, rightRotorTypes, leftRotorStart;
     @FXML
-    ChoiceBox<String> middleRotorStart, rightRotorStart, leftRotorRing, middleRotorRing, rightRotorRing;
+    ComboBox<String> middleRotorStart, rightRotorStart, leftRotorRing, middleRotorRing, rightRotorRing;
     @FXML
     Label leftRotorState, rightRotorState, middleRotorState, inputSimulationLabel, outputSimulationLabel;
     @FXML
@@ -163,7 +164,7 @@ public class Controller {
     private Settings settings;
 
     private void createNewSettings() {
-        settings = new Settings(machine, reflectorTypes,leftRotorTypes, middleRotorTypes, rightRotorTypes, leftRotorStart, middleRotorStart, rightRotorStart, leftRotorRing, middleRotorRing, rightRotorRing);
+        settings = new Settings(machine, reflectorTypes, leftRotorTypes, middleRotorTypes, rightRotorTypes, leftRotorStart, middleRotorStart, rightRotorStart, leftRotorRing, middleRotorRing, rightRotorRing);
     }
 
     private void initializeSettingsPane() {
@@ -300,7 +301,7 @@ public class Controller {
         fireKeyEventsKeyboardMode();
 
         createImportExport();
-        loadingAnimation();
+        // loadingAnimation();
     }
 
     private int counter = 0;
