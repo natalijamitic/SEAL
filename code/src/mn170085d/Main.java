@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import mn170085d.gui.Controller;
 
@@ -17,6 +18,8 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1200, 800));
         primaryStage.show();
         primaryStage.setResizable(false);
+
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("../assets/icons/seal.png")));
 
         Controller controller = (Controller)(loader.getController());
         controller.initializeApp();
