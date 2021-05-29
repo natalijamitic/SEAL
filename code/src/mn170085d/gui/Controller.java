@@ -1,5 +1,6 @@
 package mn170085d.gui;
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -8,18 +9,20 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
+
 import mn170085d.Globals;
 import mn170085d.enigma.Machine;
 
 public class Controller {
     @FXML
-    Pane textboxPane, keyboardPane, simulationPane, settingsPane, rotorStatePane, drawingPane;
+    Pane textboxPane, keyboardPane, simulationPane, settingsPane, rotorStatePane, drawingPane, loadingPane;
     @FXML
     ChoiceBox<String> reflectorTypes, leftRotorTypes, middleRotorTypes, rightRotorTypes, leftRotorStart;
     @FXML
@@ -38,6 +41,8 @@ public class Controller {
     AnchorPane anchorPane;
     @FXML
     Rectangle leftRotorRectangle, rightRotorRectangle, middleRotorRectangle;
+    @FXML
+    ImageView sealImg, enigmaImg;
 
     private boolean isSettingsPaneInitialized = false, isKeyboardModeActive = false;
 
@@ -293,7 +298,37 @@ public class Controller {
         fireKeyEventsKeyboardMode();
 
         createImportExport();
-        openTextboxPane();
+        loadingAnimation();
+    }
+
+    private int counter = 0;
+
+    private void loadingAnimation() {
+        loadingPane.toFront();
+        double distance = Math.abs(sealImg.localToScreen(sealImg.getBoundsInLocal()).getMinX() - enigmaImg.localToScreen(enigmaImg.getBoundsInLocal()).getMinX());
+        double deltaDistance = 4000 / distance;
+        double rotation = sealImg.getRotate();
+
+        AnimationTimer timer = new AnimationTimer(){
+            @Override
+            public void handle(long now) {
+                if (sealImg.getBoundsInParent().intersects(enigmaImg.getBoundsInParent())) {
+                    this.stop();
+                    loadingPane.setVisible(false);
+                    openTextboxPane();
+                    return;
+                }
+                if (counter % 15 == 0) {
+                    sealImg.setRotate(rotation - 2);
+                } else if (counter % 10 == 0) {
+                    sealImg.setRotate(rotation);
+                } else if (counter % 5 == 0) {
+                    sealImg.setRotate(rotation + 2);
+                }
+                sealImg.setTranslateX(deltaDistance * (counter++));
+            }
+        };
+        timer.start();
     }
 
     private void fireKeyEventsKeyboardMode() {

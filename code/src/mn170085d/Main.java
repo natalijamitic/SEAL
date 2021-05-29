@@ -18,8 +18,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1200, 800));
         primaryStage.show();
         primaryStage.setResizable(false);
-
-        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("../assets/icons/seal.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../assets/icons/seal_icon.png")));
 
         Controller controller = (Controller)(loader.getController());
         controller.initializeApp();
