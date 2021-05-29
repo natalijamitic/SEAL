@@ -17,7 +17,6 @@ import java.util.*;
 
 public class LineDrawer {
     private List<Line> allLines = new ArrayList<>();
-    // private List<Line> activeLines = new ArrayList<>();
     private Label plugboardLeft, plugboardRight, leftRotorLeft, leftRotorRight, middleRotorLeft, middleRotorRight, rightRotorLeft, rightRotorRight, reflectorRight;
     private Pane drawingPane;
     private int reflectorWireCounter = 1;
@@ -48,14 +47,6 @@ public class LineDrawer {
         public TypeSpecificLabels(Label source, Label destination) {
             this.source = source;
             this.destination = destination;
-        }
-
-        public Node getSource() {
-            return source;
-        }
-
-        public Node getDestination() {
-            return destination;
         }
     }
 
@@ -193,7 +184,6 @@ public class LineDrawer {
         }
         lines.forEach(line -> {
             addSpecialLineCharacteristic(line, paint);
-            // activeLines.add(line);
         });
     }
 
@@ -207,21 +197,12 @@ public class LineDrawer {
                 new Stop(1, Globals.BACK_COLOR)
         };
 
-        // src is bottom
-
         LinearGradient gradient = new LinearGradient(lineSource.getStartX(), lineSource.getEndY(), lineDestination.getStartX(), lineDestination.getEndY(), false, CycleMethod.NO_CYCLE, stops);
 
-        // lineVertical.setFill(gradient);
         addSpecialLineCharacteristic(lineVertical, gradient);
         addSpecialLineCharacteristic(lineSource, Globals.FORWARD_PAINT);
         addSpecialLineCharacteristic(lineDestination, Globals.BACK_PAINT);
     }
-
-
-//    public void inactivateLines() {
-//        activeLines.forEach(line -> addDefaultLineCharacteristics(line));
-//        activeLines.clear();
-//    }
 
     private List<Line> getLines(int type, char source, char destination) {
         String key = null;
@@ -299,6 +280,7 @@ public class LineDrawer {
         line.setOpacity(1);
         line.setStrokeWidth(2.5);
         line.setStroke(paint);
+        line.toFront();
     }
 
     private void addDefaultLineCharacteristics(Line line) {

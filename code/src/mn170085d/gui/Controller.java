@@ -74,9 +74,9 @@ public class Controller {
         leftRotorLabel.setVisible(displayLabels);
         middleRotorLabel.setVisible(displayLabels);
         rightRotorLabel.setVisible(displayLabels);
-        leftRotorRectangle.setFill(displayLabels ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
-        middleRotorRectangle.setFill(displayLabels ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
-        rightRotorRectangle.setFill(displayLabels ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
+        leftRotorRectangle.setFill(displayLabels || isKeyboardModeActive ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
+        middleRotorRectangle.setFill(displayLabels || isKeyboardModeActive ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
+        rightRotorRectangle.setFill(displayLabels || isKeyboardModeActive ? Globals.ROTOR_STATE_DEFAULT_COLOR : Globals.ROTOR_STATE_DARK_COLOR);
         leftRotorState.setText(Character.toString((char)(machine.getRotor(Globals.SLOW_ROTOR).getOffset() + Globals.A_CODE)));
         middleRotorState.setText(Character.toString((char)(machine.getRotor(Globals.MID_ROTOR).getOffset() + Globals.A_CODE)));
         rightRotorState.setText(Character.toString((char)(machine.getRotor(Globals.FAST_ROTOR).getOffset() + Globals.A_CODE)));
