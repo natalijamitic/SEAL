@@ -304,6 +304,7 @@ public class Controller {
     private int counter = 0;
 
     private void loadingAnimation() {
+        loadingPane.setVisible(true);
         loadingPane.toFront();
         double distance = Math.abs(sealImg.localToScreen(sealImg.getBoundsInLocal()).getMinX() - enigmaImg.localToScreen(enigmaImg.getBoundsInLocal()).getMinX());
         double deltaDistance = 4000 / distance;

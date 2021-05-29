@@ -116,216 +116,6 @@
       </HBox>
     <AnchorPane fx:id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <BorderPane fx:id="simulationPane" style="-fx-background-color: #acd4f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <center>
-                  <HBox alignment="CENTER" fillHeight="false" spacing="10.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <VBox alignment="CENTER">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Reflector">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <StackPane>
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
-                                    <Label fx:id="reflectorRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets right="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Left Rotor">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <StackPane>
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
-                                    <Label fx:id="leftRotorLeft" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_LEFT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets left="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                    <Label fx:id="leftRotorRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets right="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Middle Rotor">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <StackPane>
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
-                                    <Label fx:id="middleRotorLeft" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_LEFT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets left="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                    <Label fx:id="middleRotorRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets right="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Right Rotor">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <StackPane>
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
-                                    <Label fx:id="rightRotorLeft" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_LEFT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets left="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                    <Label fx:id="rightRotorRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets right="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Plugboard" textAlignment="CENTER">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <StackPane>
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
-                                    <Label fx:id="plugboardLeft" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_LEFT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets left="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                    <Label fx:id="plugboardRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
-                                       <font>
-                                          <Font name="Monospaced Bold" size="18.0" />
-                                       </font>
-                                       <StackPane.margin>
-                                          <Insets right="10.0" />
-                                       </StackPane.margin>
-                                    </Label>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </VBox>
-                     </children>
-                     <BorderPane.margin>
-                        <Insets />
-                     </BorderPane.margin>
-                  </HBox>
-               </center>
-               <top>
-                  <GridPane prefHeight="120.0" BorderPane.alignment="CENTER">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <VBox GridPane.hgrow="NEVER">
-                           <children>
-                              <Label text="Input text:">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <TextArea fx:id="inputTextSimulation" maxWidth="400.0" onKeyPressed="#simulationPressedKey" prefRowCount="1">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                              </TextArea>
-                           </children>
-                           <GridPane.margin>
-                              <Insets bottom="50.0" left="50.0" right="50.0" top="70.0" />
-                           </GridPane.margin>
-                        </VBox>
-                        <VBox alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER">
-                           <children>
-                              <Label prefHeight="18.0" prefWidth="333.0" text="Output text:">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <TextArea fx:id="outputTextSimulation" editable="false" maxWidth="400.0" prefHeight="324.0" prefRowCount="1" prefWidth="334.0">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </TextArea>
-                           </children>
-                           <GridPane.margin>
-                              <Insets bottom="50.0" right="50.0" top="70.0" />
-                           </GridPane.margin>
-                           <padding>
-                              <Insets left="50.0" />
-                           </padding>
-                        </VBox>
-                     </children>
-                     <BorderPane.margin>
-                        <Insets top="9.0" />
-                     </BorderPane.margin>
-                  </GridPane>
-               </top>
-            </BorderPane>
             <Pane fx:id="drawingPane" pickOnBounds="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label fx:id="inputSimulationLabel" text="&lt;&lt;&lt;" textFill="RED" visible="false">
@@ -2956,7 +2746,7 @@
                   </VBox>
                </children>
             </GridPane>
-            <Pane fx:id="loadingPane" layoutX="-30.0" style="-fx-background-color: #2A303C;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-30.0">
+            <Pane fx:id="loadingPane" layoutX="-30.0" style="-fx-background-color: #2A303C;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-30.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="702.0" prefWidth="1201.0" spacing="100.0">
                      <children>
@@ -3032,6 +2822,216 @@
                   </VBox>
                </children>
             </Pane>
+            <BorderPane fx:id="simulationPane" style="-fx-background-color: #acd4f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <HBox alignment="CENTER" fillHeight="false" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Reflector">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <StackPane>
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
+                                    <Label fx:id="reflectorRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets right="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Left Rotor">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <StackPane>
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
+                                    <Label fx:id="leftRotorLeft" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_LEFT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                    <Label fx:id="leftRotorRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets right="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Middle Rotor">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <StackPane>
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
+                                    <Label fx:id="middleRotorLeft" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_LEFT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                    <Label fx:id="middleRotorRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets right="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Right Rotor">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <StackPane>
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
+                                    <Label fx:id="rightRotorLeft" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_LEFT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                    <Label fx:id="rightRotorRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets right="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Plugboard" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <StackPane>
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="475.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
+                                    <Label fx:id="plugboardLeft" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_LEFT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                    <Label fx:id="plugboardRight" maxWidth="10.0" minWidth="10.0" prefHeight="470.0" prefWidth="10.0" style="-fx-line-spacing: -5;" text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" wrapText="true" StackPane.alignment="CENTER_RIGHT">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="18.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets right="10.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </HBox>
+               </center>
+               <top>
+                  <GridPane prefHeight="120.0" BorderPane.alignment="CENTER">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox GridPane.hgrow="NEVER">
+                           <children>
+                              <Label text="Input text:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="inputTextSimulation" maxWidth="400.0" onKeyPressed="#simulationPressedKey" prefRowCount="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TextArea>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="50.0" left="50.0" right="50.0" top="70.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="333.0" text="Output text:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="outputTextSimulation" editable="false" maxWidth="400.0" prefHeight="324.0" prefRowCount="1" prefWidth="334.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="50.0" right="50.0" top="70.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="9.0" />
+                     </BorderPane.margin>
+                  </GridPane>
+               </top>
+            </BorderPane>
          </children>
     </AnchorPane>
   </children>
