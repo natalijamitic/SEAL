@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Settings {
-    private static final String colors[] = {"ff99c8","5d2e46", "b58db6", "f79d84", "fac05e", "3fa7d6", "a9def9", "e4c1f9", "59cd90", "ee6352", "b63c64", "d6e87a", "13697a"};
+    private static final String colors[] = {"ff99c8","5d2e46", "b58db6", "f79d84", "fac05e", "3fa7d6", "ff4c88", "e4c1f9", "59cd90", "ee6352", "b63c64", "d6e87a", "13697a"};
     private List<PlugboardKey> allPlugboardKeys = new ArrayList<>();
     private List<Paint> freeColors = new ArrayList<>();
     private Paint currentColor = null;
