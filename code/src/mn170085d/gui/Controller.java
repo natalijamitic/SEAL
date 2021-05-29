@@ -45,6 +45,8 @@ public class Controller {
     ToggleGroup displayMode;
     @FXML
     RadioMenuItem textBoxMenuItem;
+    @FXML
+    StackPane delStackPane;
 
     private boolean isSettingsPaneInitialized = false, isKeyboardModeActive = false;
 
@@ -272,7 +274,7 @@ public class Controller {
     private Keyboard keyboard;
 
     private void createNewKeyboard() {
-        keyboard = new Keyboard(machine, keyboardInputLabel, keyboardOutputLabel);
+        keyboard = new Keyboard(machine, keyboardInputLabel, keyboardOutputLabel, delStackPane);
     }
 
     public void keyboardSelectKey(Event e) {

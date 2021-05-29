@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/assets/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mn170085d/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mn170085d/Globals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mn170085d/gui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mn170085d/gui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mn170085d/gui/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mn170085d/gui/Keyboard.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="300" column="36" lean-forward="true" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="36" />
+            <state relative-caret-position="64">
+              <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1427#2005#0" />
@@ -132,7 +132,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
+            <state relative-caret-position="-75">
               <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,14 +143,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Keyboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="46" selection-start-line="43" selection-start-column="8" selection-end-line="46" />
+            <state relative-caret-position="131">
+              <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2003#2004#0" expanded="true" />
+                <element signature="e#2083#2084#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,10 +200,10 @@
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mn170085d/Globals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
+            <state relative-caret-position="-209">
               <caret line="39" column="79" selection-start-line="39" selection-start-column="79" selection-end-line="39" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -254,8 +254,8 @@
       <find>childr</find>
       <find>stage</find>
       <find>textB</find>
-      <find>ChoiceBox</find>
       <find>displayM</find>
+      <find>ChoiceBox</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -288,14 +288,14 @@
         <option value="$PROJECT_DIR$/src/mn170085d/enigma/Machine.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/gui/ImportExport.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/gui/PlugboardKey.java" />
-        <option value="$PROJECT_DIR$/src/mn170085d/gui/Keyboard.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/gui/preloader/AppPreloader.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/gui/LoadingScreen.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/Main.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/gui/Settings.java" />
         <option value="$PROJECT_DIR$/src/assets/gui.fxml" />
-        <option value="$PROJECT_DIR$/src/mn170085d/gui/Controller.java" />
         <option value="$PROJECT_DIR$/src/mn170085d/Globals.java" />
+        <option value="$PROJECT_DIR$/src/mn170085d/gui/Controller.java" />
+        <option value="$PROJECT_DIR$/src/mn170085d/gui/Keyboard.java" />
       </list>
     </option>
   </component>
@@ -363,7 +363,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1622311134009" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1622311462590" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -560,13 +560,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/mn170085d/gui/Controller.java</url>
-          <line>345</line>
+          <line>347</line>
           <properties />
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/mn170085d/gui/Controller.java</url>
-          <line>91</line>
+          <line>93</line>
           <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
@@ -949,17 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Keyboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="46" selection-start-line="43" selection-start-column="8" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2003#2004#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/LoadingScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -989,9 +978,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/gui.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mn170085d/Globals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209">
+          <caret line="39" column="79" selection-start-line="39" selection-start-column="79" selection-end-line="39" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#2512:2968" />
+            <element signature="class#3318:3563" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="-75">
           <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1001,18 +1010,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/gui.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="300" column="36" lean-forward="true" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="36" />
+        <state relative-caret-position="64">
+          <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1427#2005#0" />
@@ -1055,14 +1056,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mn170085d/Globals.java">
+    <entry file="file://$PROJECT_DIR$/src/mn170085d/gui/Keyboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="39" column="79" selection-start-line="39" selection-start-column="79" selection-end-line="39" selection-end-column="79" />
+        <state relative-caret-position="131">
+          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#2512:2968" />
-            <element signature="class#3318:3563" />
+            <element signature="e#2083#2084#0" expanded="true" />
           </folding>
         </state>
       </provider>

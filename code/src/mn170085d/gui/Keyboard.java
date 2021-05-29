@@ -18,12 +18,13 @@ public class Keyboard {
     private Label inputLabel, outputLabel;
     private PauseTransition lampboardTransition;
     private char activeKey;
-    private StackPane activePane;
+    private StackPane activePane, delStackPane;
 
-    public Keyboard(Machine machine, Label inputLabel, Label outputLabel) {
+    public Keyboard(Machine machine, Label inputLabel, Label outputLabel, StackPane delStackPane) {
         this.machine = machine;
         this.inputLabel = inputLabel;
         this.outputLabel = outputLabel;
+        this.delStackPane = delStackPane;
     }
 
     public void pressedKey(KeyEvent e, Scene scene) {
@@ -57,8 +58,14 @@ public class Keyboard {
     }
 
     public void deleteLabels(){
-        inputLabel.setText("");
-        outputLabel.setText("");
+        delStackPane.setTranslateY(CLICK_TRANSLATION * 2);
+        PauseTransition pause = new PauseTransition(Duration.seconds(0.1));
+        pause.setOnFinished(event -> {
+            inputLabel.setText("");
+            outputLabel.setText("");
+            delStackPane.setTranslateY(0);
+        });
+        pause.play();
     }
 
     private void stopPreviousLampboardKey(){

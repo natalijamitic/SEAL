@@ -107,7 +107,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#resetToDefault" text="Reset Rotors" />
                      </items>
                   </Menu>
-              <Menu mnemonicParsing="false" text="Help">
+              <Menu mnemonicParsing="false" text="Help" visible="false">
                 <items>
                   <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
                 </items>
@@ -1952,7 +1952,7 @@
                                                 </Label>
                                              </children>
                                           </StackPane>
-                                          <StackPane onMouseClicked="#selectPlugboardKey">
+                                          <StackPane fx:id="delStackPane" onMouseClicked="#selectPlugboardKey">
                                              <children>
                                                 <Circle fill="RED" radius="25.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0">
                                                    <effect>
