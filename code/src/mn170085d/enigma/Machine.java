@@ -85,7 +85,6 @@ public class Machine {
             this.rotors[Globals.SLOW_ROTOR].rotate();
             this.rotors[Globals.MID_ROTOR].rotate();    //double step
             lastRotation |= Globals.ROTATE_SLOW | Globals.ROTATE_MID;
-
         } else if (this.rotors[Globals.FAST_ROTOR].isTurnover()) {
             this.rotors[Globals.MID_ROTOR].rotate();
             lastRotation |= Globals.ROTATE_MID;
@@ -121,6 +120,14 @@ public class Machine {
 
     public void setRotorOffset(int type, int offset) {
         this.rotors[type].setOffset(offset);
+    }
+
+    public void incRotorOffset(int type) {
+        this.rotors[type].setOffset((this.rotors[type].getOffset() + 1) % Globals.ALPHABET_SIZE);
+    }
+
+    public void decRotorOffset(int type) {
+        this.rotors[type].setOffset((this.rotors[type].getOffset() + Globals.ALPHABET_SIZE - 1) % Globals.ALPHABET_SIZE);
     }
 
     public void setRotorRing(int type, int ring) {

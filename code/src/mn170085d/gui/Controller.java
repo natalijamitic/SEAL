@@ -10,9 +10,11 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import mn170085d.Globals;
@@ -60,6 +62,10 @@ public class Controller {
         if (settings != null) {
             settings.setMachine(machine);
         }
+        updateMachine();
+    }
+
+    public void updateMachine() {
         if (simulation != null) {
             simulation.setMachine(machine);
         }
@@ -68,6 +74,15 @@ public class Controller {
         }
         updateRotorStates(true);
         hideSimulationLabels();
+    }
+
+    public void onRotorUp(MouseEvent event){
+        machine.decRotorOffset(Character.getNumericValue(((Circle)event.getSource()).getId().charAt(5)));
+        updateMachine();
+    }
+    public void onRotorDown(MouseEvent event){
+        machine.incRotorOffset(Character.getNumericValue(((Circle)event.getSource()).getId().charAt(5)));
+        updateMachine();
     }
 
     private void updateRotorStates(boolean displayLabels) {
@@ -303,8 +318,8 @@ public class Controller {
         fireKeyEventsKeyboardMode();
 
         createImportExport();
-        openTextboxPane();
-        // loadingAnimation();
+        //openTextboxPane();
+        loadingAnimation();
     }
 
     private int counter = 0;

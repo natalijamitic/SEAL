@@ -92,13 +92,13 @@ public class Simulation {
     }
 
     public void refreshWires(){
+        matchDrawingWithRotors();
         lineDrawer.removeAllLines();
         connectLines();
     }
 
     public void setMachine(Machine machine) {
         this.machine = machine;
-        matchDrawingWithRotors();   // handle offset;
         refreshWires();
     }
 

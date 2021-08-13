@@ -69,7 +69,7 @@ public class Globals {
             put("II", new RotorConfig(Globals.II_WIRING, Globals.II_TURNOVER));
             put("III", new RotorConfig(Globals.III_WIRING, Globals.III_TURNOVER));
             put("IV", new RotorConfig(Globals.IV_WIRING, Globals.IV_TURNOVER));
-            put("IV", new RotorConfig(Globals.V_WIRING, Globals.V_TURNOVER));
+            put("V", new RotorConfig(Globals.V_WIRING, Globals.V_TURNOVER));
         }
     };
 
