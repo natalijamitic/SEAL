@@ -53,16 +53,16 @@ public class Globals {
     public static final String alphabet[] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
     // Available Rotor Configurations (Wiring + Turnover)
-    public static final String I_WIRING = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
-    public static final Character I_TURNOVER = 'Q';
-    public static final String II_WIRING = "AJDKSIRUXBLHWTMCQGZNPYFVOE";
-    public static final Character II_TURNOVER = 'E';
-    public static final String III_WIRING = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
-    public static final Character III_TURNOVER = 'V';
-    public static final String IV_WIRING = "ESOVPZJAYQUIRHXLNFTGKDCMWB";
-    public static final Character IV_TURNOVER = 'J';
-    public static final String V_WIRING = "VZBRGITYUPSDNHLXAWMJQOFECK";
-    public static final Character V_TURNOVER = 'Z';
+    private static final String I_WIRING = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
+    private static final Character I_TURNOVER = 'Q';
+    private static final String II_WIRING = "AJDKSIRUXBLHWTMCQGZNPYFVOE";
+    private static final Character II_TURNOVER = 'E';
+    private static final String III_WIRING = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
+    private static final Character III_TURNOVER = 'V';
+    private static final String IV_WIRING = "ESOVPZJAYQUIRHXLNFTGKDCMWB";
+    private static final Character IV_TURNOVER = 'J';
+    private static final String V_WIRING = "VZBRGITYUPSDNHLXAWMJQOFECK";
+    private static final Character V_TURNOVER = 'Z';
     public static final Map<String, RotorConfig> AVAILABLE_ROTORS = new HashMap<String, RotorConfig>() {
         {
             put("I", new RotorConfig(Globals.I_WIRING, Globals.I_TURNOVER));
@@ -74,9 +74,9 @@ public class Globals {
     };
 
     // Available Reflector Configurations (Wiring)
-    public static final String A_WIRING = "EJMZALYXVBWFCRQUONTSPIKHGD";
-    public static final String B_WIRING = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
-    public static final String C_WIRING = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
+    private static final String A_WIRING = "EJMZALYXVBWFCRQUONTSPIKHGD";
+    private static final String B_WIRING = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
+    private static final String C_WIRING = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
     public static final Map<String, ReflectorConfig> AVAILABLE_REFLECTORS = new HashMap<String, ReflectorConfig>() {
         {
             put("A", new ReflectorConfig(Globals.A_WIRING));

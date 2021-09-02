@@ -2,7 +2,6 @@ package mn170085d.gui;
 
 import javafx.collections.FXCollections;
 import javafx.event.Event;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;

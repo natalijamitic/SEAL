@@ -118,96 +118,6 @@
       </HBox>
     <AnchorPane fx:id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <Pane fx:id="drawingPane" pickOnBounds="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label fx:id="inputSimulationLabel" text="&lt;&lt;&lt;" textFill="RED" visible="false">
-                     <font>
-                        <Font name="Monospaced Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="outputSimulationLabel" text="&gt;&gt;&gt;" textFill="#ffea00" visible="false">
-                     <font>
-                        <Font name="Monospaced Bold" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane fx:id="loadingPane" layoutX="-30.0" style="-fx-background-color: #2A303C;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-30.0">
-               <children>
-                  <VBox alignment="CENTER" prefHeight="702.0" prefWidth="1201.0" spacing="100.0">
-                     <children>
-                        <HBox alignment="CENTER">
-                           <children>
-                              <Label text="S" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="imple " textFill="WHITE">
-                                 <font>
-                                    <Font size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="E" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="nigma " textFill="WHITE">
-                                 <font>
-                                    <Font size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="M" textFill="WHITE">
-                                 <font>
-                                    <Font size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="a" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="chine " textFill="WHITE">
-                                 <font>
-                                    <Font size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Simu" textFill="WHITE">
-                                 <font>
-                                    <Font size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="l" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="64.0" />
-                                 </font>
-                              </Label>
-                              <Label text="ator" textFill="WHITE">
-                                 <font>
-                                    <Font size="64.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" spacing="600.0">
-                           <children>
-                              <ImageView fx:id="sealImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/seal.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fx:id="enigmaImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/enigma_machine.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </Pane>
             <BorderPane fx:id="simulationPane" style="-fx-background-color: #acd4f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <center>
                   <HBox alignment="CENTER" fillHeight="false" spacing="10.0" BorderPane.alignment="CENTER">
@@ -3034,12 +2944,12 @@
                               <Font name="Monospaced Bold" size="30.0" />
                            </font>
                         </Label>
-                        <Circle fx:id="rotor2" fill="#848484" onMouseClicked="#onRotorDown" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fx:id="rotor2Down" fill="#848484" onMouseClicked="#onRotorDown" radius="5.0" stroke="BLACK" strokeType="INSIDE">
                            <StackPane.margin>
                               <Insets top="70.0" />
                            </StackPane.margin>
                         </Circle>
-                        <Circle fx:id="rotor2" fill="#848484" onMouseClicked="#onRotorUp" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fx:id="rotor2Up" fill="#848484" onMouseClicked="#onRotorUp" radius="5.0" stroke="BLACK" strokeType="INSIDE">
                            <StackPane.margin>
                               <Insets bottom="70.0" />
                            </StackPane.margin>
@@ -3077,12 +2987,12 @@
                               <Font name="Monospaced Bold" size="30.0" />
                            </font>
                         </Label>
-                        <Circle fx:id="rotor0" fill="#848484" onMouseClicked="#onRotorDown" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fx:id="rotor0Down" fill="#848484" onMouseClicked="#onRotorDown" radius="5.0" stroke="BLACK" strokeType="INSIDE">
                            <StackPane.margin>
                               <Insets top="70.0" />
                            </StackPane.margin>
                         </Circle>
-                        <Circle fx:id="rotor0" fill="#848484" onMouseClicked="#onRotorUp" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fx:id="rotor0Up" fill="#848484" onMouseClicked="#onRotorUp" radius="5.0" stroke="BLACK" strokeType="INSIDE">
                            <StackPane.margin>
                               <Insets bottom="70.0" />
                            </StackPane.margin>
@@ -3120,12 +3030,12 @@
                               <Font name="Monospaced Bold" size="30.0" />
                            </font>
                         </Label>
-                        <Circle fx:id="rotor1" fill="#848484" onMouseClicked="#onRotorDown" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fx:id="rotor1Down" fill="#848484" onMouseClicked="#onRotorDown" radius="5.0" stroke="BLACK" strokeType="INSIDE">
                            <StackPane.margin>
                               <Insets top="70.0" />
                            </StackPane.margin>
                         </Circle>
-                        <Circle fx:id="rotor1" fill="#848484" onMouseClicked="#onRotorUp" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fx:id="rotor1Up" fill="#848484" onMouseClicked="#onRotorUp" radius="5.0" stroke="BLACK" strokeType="INSIDE">
                            <StackPane.margin>
                               <Insets bottom="70.0" />
                            </StackPane.margin>
@@ -3134,6 +3044,101 @@
                   </StackPane>
                </children>
             </GridPane>
+            <Pane fx:id="drawingPane" pickOnBounds="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="inputSimulationLabel" text="&lt;&lt;&lt;" textFill="RED" visible="false">
+                     <font>
+                        <Font name="Monospaced Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="outputSimulationLabel" text="&gt;&gt;&gt;" textFill="#ffea00" visible="false">
+                     <font>
+                        <Font name="Monospaced Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="loadingPane" layoutX="-30.0" style="-fx-background-color: #2A303C;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-30.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="130.0" y="411.0">
+                     <image>
+                        <Image url="@icons/icecaps.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="702.0" prefWidth="1201.0" spacing="100.0">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label graphicTextGap="1.0" text="S" textFill="#53bbe1">
+                                 <font>
+                                    <Font name="Monospaced Bold" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="imple " textFill="WHITE">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="E" textFill="#53bbe1">
+                                 <font>
+                                    <Font name="Monospaced Bold" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="nigma " textFill="WHITE">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="M" textFill="WHITE">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="a" textFill="#53bbe1">
+                                 <font>
+                                    <Font name="Monospaced Bold" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="chine " textFill="WHITE">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="Simu" textFill="WHITE">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="l" textFill="#53bbe1">
+                                 <font>
+                                    <Font name="Monospaced Bold" size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="1.0" text="ator" textFill="WHITE">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="55.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="600.0">
+                           <children>
+                              <ImageView fx:id="sealImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/seal.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="enigmaImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/enigma_machine.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
          </children>
     </AnchorPane>
   </children>

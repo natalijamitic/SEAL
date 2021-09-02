@@ -2,7 +2,6 @@ package mn170085d.gui;
 
 import javafx.animation.Animation;
 import javafx.animation.PauseTransition;
-import javafx.event.Event;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;

@@ -102,20 +102,8 @@ public class Machine {
         this.plugboard.insertPair(a, b);
     }
 
-    public void removePlugboardPair(int a) {
-        this.plugboard.removePair(a);
-    }
-
-    public void resetPlugboard() {
-        this.plugboard.reset();
-    }
-
     public Rotor getRotor(int type) {
         return this.rotors[type];
-    }
-
-    public void setRotor(Rotor rotor, int type) {
-        this.rotors[type] = rotor;
     }
 
     public void setRotorOffset(int type, int offset) {

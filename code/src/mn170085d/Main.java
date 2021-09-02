@@ -20,7 +20,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../assets/icons/seal_icon.png")));
 
-        Controller controller = (Controller)(loader.getController());
+        Controller controller = loader.getController();
         controller.initializeApp();
     }
 

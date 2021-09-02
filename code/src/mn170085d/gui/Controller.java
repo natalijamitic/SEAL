@@ -2,7 +2,6 @@ package mn170085d.gui;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -318,7 +317,6 @@ public class Controller {
         fireKeyEventsKeyboardMode();
 
         createImportExport();
-        //openTextboxPane();
         loadingAnimation();
     }
 

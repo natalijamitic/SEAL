@@ -1,7 +1,6 @@
 package mn170085d.gui;
 
 import javafx.geometry.Bounds;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.CycleMethod;
@@ -98,7 +97,6 @@ public class LineDrawer {
                 linesMap.get("" + type + destination + source).add(line);
             }
         }
-
     }
 
     private void drawLine(int type,  char source, char destination) {
@@ -238,7 +236,6 @@ public class LineDrawer {
         });
         allLines.clear();
         drawnReflectorWires.clear();
-        // activeLines.clear();
         linesMap.clear();
         reflectorWireCounter = 1;
 
